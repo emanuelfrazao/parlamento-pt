@@ -56,7 +56,7 @@ the main components of the project are:
 
 we start by analyzing the needs of **querying the documents**, which is the core of the product, and then analyze how to **store the documents** given the constraints.
 
-#### querying the documents
+### querying the documents
 
 the queries envisioned may be described as machine learning tasks:
 - **question answering** - given a document and a question, answer the question;
@@ -71,19 +71,28 @@ all these tasks, under the constraint of providing references along with the ans
 - a _Vector-Embedding Database_ (VDB), and
 - one or many _Language Model(s)_ (LM),
 
-provided that:
+— provided that:
 - the VDB contains a vector embedding of each sub-chapter of the document;
 - the LM(s) models Portuguese, and can leverage the VDB to answer the queries.
 
-we detail the envisioned solution for each task below.
+**NOTE**: there are trade-offs to consider in using a single LM for all tasks or one per task:
+- in using a single LM:
+    - the LM needs to be large in order to be generalist;
+    - large LM's are 
+        - expensive to train (and harder to find pre-trained in portuguese), and
+        - expensive use;
+    - on the other hand, the vector embeddings of the VDB are not task-specific, hence a single LM could be used for all tasks;
+- in using one LM per task:
+    - the LM's can be smaller and task-specific (hence cheaper to train and use);
+    - we need to investigate the best solution for the VDB, namely:
+        - having a single embedding for all models/tasks, or
+        - having one embedding per model/task;
 
-##### question answering
+we detail the envisioned solution for each task, using both options, below.
 
+#### single LM
 
-
-##### topic summarization
-
-##### topic identification
+#### one LM per task
 
 
 #### storing the documents
