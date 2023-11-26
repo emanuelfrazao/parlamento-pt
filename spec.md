@@ -39,7 +39,7 @@ now that LLM's (or SLM's) are trivial to use and train, we do!
 
 the main components of the project are:
 - documents corresponding to party programs – from different elections;
-- queries to programs:
+- queries to these programs:
     - on a single program:
         - given a **program** and a **topic**, 
             - summarize the position of the party on that topic;
@@ -52,7 +52,46 @@ the main components of the project are:
     - on multiple programs – comparing multiple single program queries across:
         - multiple parties;
         - multiple elections;
-- web-app that allows the user to make queries.
+- web-app that allows the user to make the queries and get the results.
+
+we start by analyzing the needs of **querying the documents**, which is the core of the product, and then analyze how to **store the documents** given the constraints.
+
+#### querying the documents
+
+the queries envisioned may be described as machine learning tasks:
+- **question answering** - given a document and a question, answer the question;
+- **topic summarization** - given a document and a topic, summarize the position of the party on that topic.
+- **topic identification** - given a document, identify the topics covered by the document, for a predefined set of topics;
+
+furthermore, for all of the queries, we want to be able to:
+- identify the parts of the document that are relevant to the query, and
+- compare the results of the queries across multiple documents.
+
+all these tasks, under the constraint of providing references along with the answer, can be solved with a combination of:
+- a _Vector-Embedding Database_ (VDB), and
+- one or many _Language Model(s)_ (LM),
+
+provided that:
+- the VDB contains a vector embedding of each sub-chapter of the document;
+- the LM(s) models Portuguese, and can leverage the VDB to answer the queries.
+
+we detail the envisioned solution for each task below.
+
+##### question answering
+
+
+
+##### topic summarization
+
+##### topic identification
+
+
+#### storing the documents
+
+
+### architecture
+
+
 
 ## plan
 
