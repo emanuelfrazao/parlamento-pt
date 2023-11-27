@@ -58,6 +58,8 @@ we start by analyzing the needs of **querying the documents**, which is the core
 
 ### querying the documents
 
+- [document sources](document_sources.md)
+
 the queries envisioned may be described as machine learning tasks:
 - **question answering** - given a document and a question, answer the question;
 - **topic summarization** - given a document and a topic, summarize the position of the party on that topic.
